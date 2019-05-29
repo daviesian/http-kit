@@ -1,4 +1,4 @@
-(defproject http-kit "2.4.0-alpha3"
+(defproject daviesian/http-kit "2.4.0-alpha4-wsfix"
   :author "Feng Shen (@shenfeng)"
   :description "High-performance event-driven HTTP client/server for Clojure"
   :url "http://http-kit.org/"
@@ -7,6 +7,8 @@
             :distribution :repo}
   :min-lein-version "2.3.3"
   :global-vars {*warn-on-reflection* true}
+
+   :deploy-repositories [["clojars" {:sign-releases false }]]
 
   :dependencies
   [[org.clojure/clojure "1.5.1"]]
@@ -21,7 +23,7 @@
   ["-Dclojure.compiler.disable-locals-clearing=true"
    "-Xms1g" "-Xmx1g"] ; Testing https require more memory
 
-  :javac-options ["-source" "1.6" "-target" "1.6" "-g"]
+  :javac-options ["-source" "1.7" "-target" "1.7" "-g"]
   :java-source-paths ["src/java"]
   :test-paths ["test"]
   :jar-exclusions [#"^java.*"] ; exclude the java directory in source path
